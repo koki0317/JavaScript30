@@ -22,25 +22,39 @@
     // Interpolated
 
     // Styled
-
+    console.log("%c I am Koki", "font-size: 50px; background:red;");
     // warning!
-
+    console.warn("Oh now");
     // Error :|
+    console.error("Oh now");
 
     // Info
-
+    console.info("Good");
     // Testing
-
+    const p = document.querySelector("p");
+    console.assert(p.classList.contains("ouch"), "That is wrong");
     // clearing
-
+    console.clear();
     // Viewing DOM Elements
-
+    console.log(p);
+    console.dir(p);
     // Grouping together
 
     // counting
 
     // timing
+    // console.time("Fetching data");
+    // fetch("https://api.github.com/users/koki0317")
+    //   .then(data => data.json())
+    //   .then(data => {
+    //     console.timeEnd("Fetching data");
+    //     console.log(data);
+    //   })
 
+      console.clear();
+      fetch("https://api.github.com/users/koki0317")
+        .then(data => data.json())
+        .then(console.log(data))
   </script>
 </body>
 </html>
