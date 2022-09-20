@@ -96,6 +96,36 @@
   </div>
 
 <script>
+  // check where the first check was made
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+  checkboxes.forEach(check => check.addEventListener("click", handleCheck));
+
+  let lastChecked;
+
+
+  function handleCheck(e) {
+    let inBetween = false;
+    if (e.shiftKey && this.checked) {
+      checkboxes.forEach(checkbox => {
+        console.log(checkbox);
+        if (checkbox === this || checkbox === lastChecked) {
+          inBetween = !inBetween;
+          console.log("starting");
+        }
+
+        if (inBetween) {
+          checkbox.checked = true;
+        }
+      });
+    }
+
+    lastChecked = this;
+  }
+  // function(event) {
+  //   console.log(event);
+  // }
+  // if pressed shift key && checked second check
+  // first to second check become all checked
 </script>
 </body>
 </html>
